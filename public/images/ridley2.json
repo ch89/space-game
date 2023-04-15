@@ -1,0 +1,97 @@
+{"frames": {
+
+"attack_01.png":
+{
+	"frame": {"x":1,"y":1,"w":114,"h":125},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":114,"h":125},
+	"sourceSize": {"w":114,"h":125},
+	"anchor": {"x":0,"y":1}
+},
+"attack_02.png":
+{
+	"frame": {"x":1,"y":446,"w":113,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":113,"h":108},
+	"sourceSize": {"w":113,"h":108},
+	"anchor": {"x":0,"y":1}
+},
+"attack_03.png":
+{
+	"frame": {"x":1,"y":339,"w":115,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":105},
+	"sourceSize": {"w":115,"h":105},
+	"anchor": {"x":0,"y":1}
+},
+"attack_04.png":
+{
+	"frame": {"x":1,"y":230,"w":116,"h":107},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":116,"h":107},
+	"sourceSize": {"w":116,"h":107},
+	"anchor": {"x":0,"y":1}
+},
+"fly_01.png":
+{
+	"frame": {"x":1,"y":868,"w":110,"h":98},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":110,"h":98},
+	"sourceSize": {"w":110,"h":98},
+	"anchor": {"x":0,"y":1}
+},
+"fly_02.png":
+{
+	"frame": {"x":1,"y":556,"w":112,"h":98},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":98},
+	"sourceSize": {"w":112,"h":98},
+	"anchor": {"x":0,"y":1}
+},
+"fly_03.png":
+{
+	"frame": {"x":1,"y":656,"w":112,"h":98},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":98},
+	"sourceSize": {"w":112,"h":98},
+	"anchor": {"x":0,"y":1}
+},
+"fly_04.png":
+{
+	"frame": {"x":1,"y":756,"w":110,"h":111},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":110,"h":111},
+	"sourceSize": {"w":110,"h":111},
+	"anchor": {"x":0,"y":1}
+},
+"fly_05.png":
+{
+	"frame": {"x":1,"y":117,"w":111,"h":124},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":124},
+	"sourceSize": {"w":111,"h":124},
+	"anchor": {"x":0,"y":1}
+}},
+"animations": {
+	"attack": ["attack_01.png","attack_02.png","attack_03.png","attack_04.png"],
+	"fly": ["fly_01.png","fly_02.png","fly_03.png","fly_04.png","fly_05.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.1",
+	"image": "ridley2.png",
+	"format": "RGBA8888",
+	"size": {"w":127,"h":967},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:1a66d71a34446ec0a69dd710621b0e4e:26ebec81f581f85b2cded47b024f741b:53620b3431bd41e51e204a7df3fef29f$"
+}
+}

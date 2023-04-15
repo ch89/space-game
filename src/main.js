@@ -5,6 +5,7 @@ import Enemy from "./Enemy.js"
 import Spacepirate from "./Spacepirate.js"
 import Energy from "./Energy.js"
 import Nightmare from "./Nightmare.js"
+import Ridley from "./Ridley.js"
 
 initializeApp({
     apiKey: "AIzaSyDRSspX_QPOt-R868sZRFo-8UgGRvsPj4E",
@@ -42,6 +43,13 @@ app.loader
     .add("bomb", "images/bomb.png")
     .add("missile", "images/missile.png")
     .add("supermissile", "images/supermissile.png")
+    .add("fire", "images/fire.png")
+    .add("ridley", "images/ridley.json")
+    .add("ridley2", "images/ridley2.json")
+    .add("smoke", "images/smoke.png")
+    .add("scream", "sounds/scream.mp3")
+    .add("shoot", "sounds/shoot.wav")
+    .add("explode", "sounds/explode.wav")
     .load(setup)
 
 let game, world
@@ -53,18 +61,29 @@ function setup() {
     window.ship = new Ship
     window.players = [ship]
     window.enemies = []
+    window.particles = new PIXI.ParticleContainer(1000, {
+		scale: true,
+		position: true,
+		rotation: true,
+		uvs: true,
+		alpha: true
+	})
 			
-    app.stage.addChild(game)
+    app.stage.addChild(game, particles)
     game.addChild(world, ship)
   
     // Create a ticker to update the sprite
-    app.ticker.add(() => game.children.forEach(sprite => sprite.animate()))
+    app.ticker.add(() => {
+        game.children.forEach(sprite => sprite.animate())
+        particles.children.forEach(particle => particle.animate())   
+    })
 
     // Create an interval to spawn enemies every 3 seconds
     // setInterval(spawnEnemy, 5000, Spacepirate)
     // setInterval(spawnEnemy, 4000, Enemy)
     // setInterval(() => game.addChild(new Energy), 7000)
-    setTimeout(spawnEnemy, 2000, Nightmare)
+    // setTimeout(spawnEnemy, 2000, Nightmare)
+    setTimeout(spawnEnemy, 2000, Ridley)
 }
 
 function spawnEnemy(type) {

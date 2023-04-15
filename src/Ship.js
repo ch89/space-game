@@ -1,5 +1,7 @@
 import Beam from "./Beam.js"
 import Bar from "./Bar.js"
+import Explosion from "./Explosion"
+import Missile from "./Missile.js"
 
 const key = {
     keysDown: {},
@@ -26,7 +28,7 @@ class Ship extends PIXI.Sprite {
 
       this.speed = 5
       this.ready = true
-      this.life = 10
+      this.life = 100
       this.maxLife = this.life
 
       this.on("added", () => {
@@ -34,19 +36,29 @@ class Ship extends PIXI.Sprite {
         this.health.position.set(25)
         app.stage.addChild(this.health)
       })
+
+      this.animate = this.move
+    }
+
+    reset() {
+      this.vx = 0
+      this.vy = 0
     }
   
     // Update function, called every frame
-    animate() {
+    move() {
       // Move the sprite based on the movement variables
         if (key.pressed("ArrowUp")) this.y -= this.speed
         if (key.pressed("ArrowDown")) this.y += this.speed
         if (key.pressed("ArrowLeft")) this.x -= this.speed
         if (key.pressed("ArrowRight")) this.x += this.speed
         if (key.pressed("a") && this.ready) this.shoot()
+        if (key.pressed("s") && this.ready) this.shootMissle()
 
         this.boundaries()
     }
+
+    disabled() {}
 
     boundaries() {
       if(this.x - this.width / 2 < 0) {
@@ -77,6 +89,17 @@ class Ship extends PIXI.Sprite {
         setTimeout(() => this.ready = true, 300)
     }
 
+    // Temp
+    shootMissle() {
+      let missile = new Missile(this)
+      missile.x = this.x + this.width / 2
+      missile.y = this.y
+      this.parent.addChild(missile)
+
+      this.ready = false
+      setTimeout(() => this.ready = true, 300)
+  }
+
     heal(energy) {
       this.life += energy
 
@@ -94,6 +117,12 @@ class Ship extends PIXI.Sprite {
       }
 
       this.health.update(this.life, this.maxLife)
+    }
+
+    explosion() {
+      let explosion = new Explosion()
+      explosion.position.set(this.x, this.y)
+      this.parent.addChild(explosion)
     }
 
     destroy() {
