@@ -4,6 +4,8 @@ class Beam extends PIXI.Sprite {
 
         this.anchor.set(.5)
         this.scale.set(2)
+
+        this.damage = 1
     }
 
     animate() {
@@ -17,7 +19,7 @@ class Beam extends PIXI.Sprite {
         for(let enemy of enemies) {
             if(this.hit(enemy)) {
                 this.destroy()
-                enemy.hurt(1)
+                enemy.hurt(this)
                 break
             }
         }

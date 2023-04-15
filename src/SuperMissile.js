@@ -51,7 +51,7 @@ class SuperMissile extends PIXI.Sprite {
 
 		this.rotation = Math.atan2(this.vy, this.vx)
 
-		// this.addSmoke()
+		this.addSmoke()
 
 		if(this.hit(this.nightmare) && this.ready) {
 			this.nightmare.defense.enabled = false
@@ -77,24 +77,24 @@ class SuperMissile extends PIXI.Sprite {
 		}
 	}
 
-	// addSmoke() {
-	// 	let smoke = new PIXI.Sprite(app.loader.resources.particle.texture)
-	// 	smoke.anchor.set(.5)
-	// 	smoke.x = this.x - Math.cos(this.rotation) * this.width / 2
-	// 	smoke.y = this.y - Math.sin(this.rotation) * this.width / 2
-	// 	smoke.rotation = Math.random() * Math.PI * 2
-	// 	smoke.scale.set(Math.random() * .5 + 1)
-	// 	smoke.speed = Math.random() * .05 + .025
-	// 	particles.addChild(smoke)
+	addSmoke() {
+		let smoke = new PIXI.Sprite(app.loader.resources.smoke.texture)
+		smoke.anchor.set(.5)
+		smoke.x = this.x - Math.cos(this.rotation) * this.width / 2
+		smoke.y = this.y - Math.sin(this.rotation) * this.width / 2
+		smoke.rotation = Math.random() * Math.PI * 2
+		smoke.scale.set(Math.random() * .5 + 1)
+		smoke.speed = Math.random() * .05 + .025
+		particles.addChild(smoke)
 
-	// 	smoke.animate = function() {
-	// 		this.scale.x += this.speed
-	// 		this.scale.y += this.speed
-	// 		this.alpha -= this.speed
+		smoke.animate = function() {
+			this.scale.x += this.speed
+			this.scale.y += this.speed
+			this.alpha -= this.speed
 
-	// 		if(this.alpha <= 0) this.destroy()
-	// 	}
-	// }
+			if(this.alpha <= 0) this.destroy()
+		}
+	}
 
 	explosion() {
 		let explosion = new Explosion()

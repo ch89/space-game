@@ -28,7 +28,7 @@ class Ship extends PIXI.Sprite {
 
       this.speed = 5
       this.ready = true
-      this.life = 100
+      this.life = 25
       this.maxLife = this.life
 
       this.on("added", () => {

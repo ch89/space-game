@@ -126,7 +126,7 @@ class Nightmare extends PIXI.Sprite {
 		}, 2000)
 	}
 
-    hurt(damage) {
+    hurt({ damage }) {
 		if(this.life > 0 && ! this.defense.enabled) {
 			this.life -= damage
 

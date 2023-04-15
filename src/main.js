@@ -6,6 +6,7 @@ import Spacepirate from "./Spacepirate.js"
 import Energy from "./Energy.js"
 import Nightmare from "./Nightmare.js"
 import Ridley from "./Ridley.js"
+import Kraid from "./Kraid.js"
 
 initializeApp({
     apiKey: "AIzaSyDRSspX_QPOt-R868sZRFo-8UgGRvsPj4E",
@@ -50,6 +51,10 @@ app.loader
     .add("scream", "sounds/scream.mp3")
     .add("shoot", "sounds/shoot.wav")
     .add("explode", "sounds/explode.wav")
+    .add("kraid", "images/kraid.png")
+    .add("fireball", "images/fireball.png")
+    .add("claw", "images/claw.png")
+    .add("arm", "images/arm.png")
     .load(setup)
 
 let game, world
@@ -83,7 +88,8 @@ function setup() {
     // setInterval(spawnEnemy, 4000, Enemy)
     // setInterval(() => game.addChild(new Energy), 7000)
     // setTimeout(spawnEnemy, 2000, Nightmare)
-    setTimeout(spawnEnemy, 2000, Ridley)
+    // setTimeout(spawnEnemy, 2000, Ridley)
+    setTimeout(spawnEnemy, 2000, Kraid)
 }
 
 function spawnEnemy(type) {
